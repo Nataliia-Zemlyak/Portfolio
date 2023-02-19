@@ -7,7 +7,8 @@ html
     font-size: 1px
 *
     padding: 0
-    margin: 0   
+    margin: 0  
+    box-sizing: border-box 
 body 
     font-family: 'Ubuntu', Roboto Slab, sans-serif
     margin: 0
@@ -33,12 +34,12 @@ a
     text-decoration: none 
 
 h2 
-    font-size: 35rem
+    font-size: 45rem
     font-family: "Roboto"
-    color: #85586F
+    color: #85586f
     text-align: center
     font-weight: bold
-    padding: 20rem 0
+    padding-bottom: 25rem
 
 /* section header */
 
@@ -83,6 +84,12 @@ h2
     height: 50rem
     justify-content: center
     z-index: 8
+    span 
+        margin: 2px 0
+        width: 38px
+        height: 4px
+        background-color: #fff
+        border-radius: 5px
     +media(742) 
         display: none
  
@@ -105,13 +112,7 @@ h2
         display: inline-block
         padding: 32rem 0
 
-.hamburger 
-    span 
-        margin: 2px 0
-        width: 38px
-        height: 4px
-        background-color: #fff
-        border-radius: 5px
+   
 .social-links
     display: flex
     justify-content: space-between
@@ -131,14 +132,16 @@ h2
     svg
         &:hover
             fill: #2c2f3f
+.header-hidden 
+    transform: translateY(-100%)
+
 
 /* section main-fon */
 .main 
     justify-content: space-between
 .main-fon 
     height: 100vh
-    /* background: linear-gradient(90deg, #85586F, #F8EDE3) top center */
-    /* background-color: #F8EDE3 */
+    background-color: #f5f8fa
     background-attachment: fixed
 
 .fon-container 
@@ -152,7 +155,7 @@ h2
         font-weight: 700
         line-height: 56rem
         font-family: "Roboto"
-        color: #A7727D
+        color: #85586f
 
 .fon-container 
     p 
@@ -164,7 +167,7 @@ h2
 
 .my-photo 
     img 
-        width: 70%
+        width: 50%
         margin: 15rem auto
         display: block
         border: 8px solid #2c2f3f
@@ -173,22 +176,78 @@ h2
 
 /* section about */
 #about 
-    background-color: #F8EDE3
+    padding: 100rem 0
+    background-color: #f5f8fa
+.title 
+    h2 
+      padding-bottom: 50rem
 
+.about-info 
+    // align-items: flex-end
+    flex-direction: column
+    +media(1024)
+        flex-direction: row
 
 .about-text 
+    text-align: left
+    max-width: 495rem
+    padding: 10rem 10rem
+    background-color: #fff
+    filter: drop-shadow(5px -4px 10px #9F9797)
+    transition: all .3s ease
+    &:hover
+        transform: rotate3d(1, 2, 3, 10deg)
     p 
+        padding: 2rem 0
         font-size: 20rem
         color:#2c2f3f
         font-family: "Roboto"
         line-height: 1.5
+.about-text,
+.about-education
+    position: relative
+    svg 
+        width: 31rem
+        height: 31rem
+        fill: red
+        position: absolute
+        left: 50%
+        top: -22rem
+        z-index: 3
+
 
 .about-education h3,
 .my-skills h3 
     font-family: "Roboto"
     font-size: 30rem
-    color: #A7727D
+    color: #85586f
     margin: 10rem 0
+.about-education 
+    margin: 0 50rem
+    text-align: left
+    background-color: #fff
+    filter: drop-shadow(5px -4px 10px #9F9797)
+    padding: 10rem 10rem
+    transform: rotate(-10deg)
+    transition: all .3s ease
+    &:hover
+        transform: rotate3d(1, 1, 3, 0)
+    h3 
+        text-align: center
+
+
+.education 
+    dd
+        padding-left: 10rem
+        font-size: 18rem
+        color: #737373
+
+.specialty 
+    font-family: "Roboto"
+    font-weight: bold
+    font-size: 20rem
+    color: #000
+
 
 .style-hr 
     margin: 0 auto
@@ -199,14 +258,6 @@ h2
     border-width: 5px
     width: 15%
     margin-top: 20rem
-.education 
-    dd
-        font-size: 18rem
-
-.specialty 
-    font-family: "Roboto"
-    font-weight: bold
-    font-size: 20rem
 
 .my-skills 
     padding: 50rem 0
@@ -220,21 +271,27 @@ h2
         margin-left: 10rem
 
 /* section portfolio */
+.portfolio 
+    padding: 100rem 0
+    background-color: #f5f8fa
 .cards 
-    justify-content: center
+    flex-direction: column
+    align-items: center
+    +media(760)
+        flex-direction: row
+        justify-content: center
 .project 
     margin: 10px 20px
-    width: 350px
+    max-width: 350px
     border-radius: 15px
     background-color: #fff
     border: 1px solid #d7dbe8
     padding-bottom: 15rem
     text-align: center
-    transition: all .8s ease
-
-.project
-    &::hover
-        box-shadow: 7px -4px 15px 2px rgba(133,88,111,1)
+    transition: all .5s ease
+    &:hover
+        transform: scale(1.03)
+        filter: drop-shadow(8px 8px 3px #9F9797)
 
 .btn 
     align-items: center
@@ -292,13 +349,21 @@ h2
 
 
 /* section contact */
+#contact 
+    padding: 100rem 0
+    background-color: #f5f8fa
 form 
     flex-direction: column
 
 .container-form 
     margin: 0 auto
     padding: 21rem
-    width: 50%
+    width: 100%
+    +media(600)
+        width: 70%
+    +media(800)
+        width: 50%
+   
 
 .input,
 .textarea 
@@ -315,7 +380,6 @@ form
 
 .textarea 
     resize: vertical
-    min-height: 50rem
     max-height: 150rem
 
 
@@ -325,9 +389,13 @@ form
 
 
 /* section footer */
-
+.footer 
+    justify-content: space-between
+.coppy
+    background-color: #f5f8fa
 .copyright 
     color:#737373
     font-size: 15rem
     font-family: "Roboto"
 
+// 0 0 32 34

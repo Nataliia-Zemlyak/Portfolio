@@ -28,3 +28,17 @@ function menuBackground() {
     }
 }
 window.addEventListener(`scroll`, menuBackground)
+
+//scroll
+const a = document.querySelectorAll('a[href^="#"]')
+for (let title of a) {
+    title.addEventListener('click', function (event) {
+        event.preventDefault()
+        let scroll = title.getAttribute('href')
+
+        document.querySelector(scroll).scrollIntoView({
+            behavior: 'smooth'
+            
+        })
+    })
+}
