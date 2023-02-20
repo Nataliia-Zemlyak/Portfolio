@@ -42,3 +42,22 @@ for (let title of a) {
         })
     })
 }
+
+// scroll to top
+
+window.addEventListener('scroll', function () {
+    let btnTop = document.getElementById('scrolTop');
+
+    if (window.pageYOffset > 600) {
+        btnTop.classList.add('show');
+    } else {
+        btnTop.classList.remove('show');
+    }
+});
+
+document.getElementById('scrolTop').addEventListener('click', function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
