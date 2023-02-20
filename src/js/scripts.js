@@ -22,7 +22,8 @@ function menuBackground() {
     
 
     if (window.pageYOffset > (window.innerHeight / 4)) {
-        headerSection.style.backgroundColor = "#85586F"
+        headerSection.style.backgroundColor = "#2c2f3f"
+        
     } else {
         headerSection.style.backgroundColor = "transparent"
     }
