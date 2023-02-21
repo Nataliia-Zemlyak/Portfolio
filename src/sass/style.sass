@@ -79,7 +79,7 @@ h2
             bottom: -5rem
             width: 0%
             height: 1rem
-            background-color: #EDDBC7
+            background-color: #fff
             transition: all 0.5s ease
         &:hover::before
             width: 100%
@@ -199,7 +199,7 @@ h2
         overflow: hidden
         white-space: nowrap
         margin: 0 auto
-        animation: typing 3.5s steps(40, end)
+        animation: typing 2.5s steps(40, end)
         +media(530)
             font-size: 30rem
            
@@ -219,7 +219,7 @@ h2
 .about 
     padding: 100rem 0
     background-color: #f5f8fa
-    
+
 .title 
     h2 
       padding-bottom: 50rem
@@ -339,6 +339,26 @@ canvas
     width: 150px 
     height: 150px 
     margin: 0 10px
+
+//animation section about
+.card-text
+    opacity: 0
+    transition: all .6s ease-out
+    transform: rotate3d(1, 2, 3, -20deg)
+.card-text._active-anim
+    opacity: 1
+    transform: rotate3d(1, 2, 3, 0deg)
+    
+
+.card-edu
+    opacity: 0
+    transition: all .7s ease-out
+    transform: rotate3d(1, 2, 3, 20deg)
+.card-edu._active-anim
+    opacity: 1
+    transform: rotate3d(1, 2, 3, 0deg)
+
+
 
 /* section portfolio */
 .portfolio 
