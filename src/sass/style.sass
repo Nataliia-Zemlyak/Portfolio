@@ -346,7 +346,9 @@ canvas
 .card-text
     opacity: 0
     transition: all .5s ease-out
-    transform: rotate3d(1, 2, 3, -20deg)
+    transform: rotate3d(1, 2, 3, -5deg)
+    +media(600)
+        transform: rotate3d(1, 2, 3, -20deg)
 .card-text._active-anim
     opacity: 1
     transform: rotate3d(1, 2, 3, 0deg)
@@ -355,7 +357,9 @@ canvas
 .card-edu
     opacity: 0
     transition: all .5s ease-out
-    transform: rotate3d(1, 2, 3, 20deg)
+    transform: rotate3d(1, 2, 3, 5deg)
+    +media(600)
+        transform: rotate3d(1, 2, 3, 20deg)
 .card-edu._active-anim
     opacity: 1
     transform: rotate3d(1, 2, 3, 0deg)
@@ -439,7 +443,8 @@ canvas
 .card-left
     opacity: 0
     transition: all .5s ease
-    transform: translate(-30%, 0%)
+    transform: translate(0%, -20%)
+
 .card-left._active-anim
     opacity: 1
     transform: translate(0%, 0%)
@@ -447,7 +452,7 @@ canvas
 .card-right
     opacity: 0
     transition: all .5s ease
-    transform: translate(30%, 0%)
+    transform: translate(0%, 20%)
 .card-right._active-anim
     opacity: 1
     transform: translate(0%, 0%)
