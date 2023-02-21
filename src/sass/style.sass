@@ -136,6 +136,7 @@ h2
         border-radius: 5rem
         width: 25rem
         height: 25rem
+        transition: all .3s ease
         &:hover
             fill: #85586f
 
@@ -343,7 +344,7 @@ canvas
 //animation section about
 .card-text
     opacity: 0
-    transition: all .6s ease-out
+    transition: all .5s ease-out
     transform: rotate3d(1, 2, 3, -20deg)
 .card-text._active-anim
     opacity: 1
@@ -352,7 +353,7 @@ canvas
 
 .card-edu
     opacity: 0
-    transition: all .7s ease-out
+    transition: all .5s ease-out
     transform: rotate3d(1, 2, 3, 20deg)
 .card-edu._active-anim
     opacity: 1
@@ -433,7 +434,22 @@ canvas
     font-size: 15rem
     padding: 10rem 15rem
     min-height: 100rem
+//animation cards
+.card-left
+    opacity: 0
+    transition: all .5s ease
+    transform: translate(-30%, 0%)
+.card-left._active-anim
+    opacity: 1
+    transform: translate(0%, 0%)
 
+.card-right
+    opacity: 0
+    transition: all .5s ease
+    transform: translate(30%, 0%)
+.card-right._active-anim
+    opacity: 1
+    transform: translate(0%, 0%)
 
 /* section contact */
 #contact 
