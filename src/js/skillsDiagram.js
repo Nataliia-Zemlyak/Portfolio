@@ -34,7 +34,7 @@ function createScale(canvasId, percent) {
 
         // Оновлюємо текст з відсотками
         const text = currentPercent.toFixed() + '%';
-        context.font = '27px Arial';
+        context.font = '35px Roboto';
         const textWidth = context.measureText(text).width;
         context.fillStyle = '#000';
         context.fillText(text, centerX - textWidth / 2, centerY + 7);
@@ -81,7 +81,7 @@ function checkIfFunctionShouldBeExecuted() {
         createScale('html-css', 90); 
         createScale('pug-sass', 90); 
         createScale('js', 60);
-        createScale('bootstrap', 60); 
+        createScale('bootstrap', 70); 
         createScale('git', 60); 
     }
 }

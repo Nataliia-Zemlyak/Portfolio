@@ -57,42 +57,41 @@ h2
 .top-menu 
     align-items: center
     justify-content: space-between
-    min-height: 70rem
+    min-height: 80rem
 .menu 
+    justify-content: center
+    li 
+        padding: 4rem 35rem 9rem 0rem
+
     a 
-        font-size: 24rem
-        padding: 35rem 0
-        color: #25252c
+        font-size: 20rem
+        color: #EDDBC7
         line-height: 24rem
         font-weight: 700
+        position: relative
+        transition: all 0.3s ease-in-out
+        &::before
+            content: ''
+            position: absolute
+            margin: auto
+            left: 0rem
+            right: 0rem
+            bottom: -5rem
+            width: 0%
+            height: 1rem
+            background-color: #EDDBC7
+            transition: all 0.5s ease
+        &:hover::before
+            width: 100%
     +media(742)
         justify-content: center
-        li 
-            padding: 0rem 50rem 4rem 0
-        a
-            position: relative
-            font-size: 15rem
-            padding: 0
-            color: #EDDBC7
-            transition: all 0.3s ease-in-out
-            &::before
-                content: ''
-                position: absolute
-                margin: auto
-                left: 0rem
-                right: 0rem
-                bottom: -5rem
-                width: 0%
-                height: 1rem
-                background-color: #EDDBC7
-                transition: all 0.5s ease
-            &:hover::before
-                width: 100% 
+       
+        
+            
     
 .hamburger 
     display: flex
     flex-direction: column
-    padding-top: 22rem
     height: 50rem
     justify-content: center
     z-index: 8
@@ -100,7 +99,7 @@ h2
         margin: 2rem 0
         width: 38rem
         height: 4rem
-        background-color: #fff
+        background-color: #EDDBC7
         border-radius: 5rem
     +media(742) 
         display: none
@@ -109,6 +108,7 @@ h2
     display: inline-block
     position: absolute
     ul 
+        justify-content: center
         margin: 0
         position: fixed
         flex-direction: column
@@ -116,12 +116,14 @@ h2
         right: 0
         top: 0
         bottom: 0
-        background: #EDDBC7
+        background: rgb(44,47,63)
+        background: linear-gradient(90deg, rgba(44,47,63,1) 54%, rgba(53,58,88,1) 100%)
         z-index: 3 
+    li 
+        padding-bottom: 40rem
     a
-        font-size: 18rem
+        font-size: 30rem
         display: inline-block
-        padding: 32rem 0
 
    
 .social-links
@@ -146,33 +148,38 @@ h2
 
 /* section main-fon */
 .main-fon 
-    height: 100vh
+    padding-bottom: 150rem
     background-color: #f5f8fa
-    background-attachment: fixed
+    +media(1024)
+        height: 100vh
 
 .main 
     flex-direction: column
     padding-top: 100rem
     align-items: center
-    +media(768)
+    +media(1120)
         justify-content: space-between
         flex-direction: row
 
 .fon-container 
     flex-direction: column
     justify-content: center
-    
-
-.fon-container 
+    align-items: center
+    +media(1030)
+        align-items: flex-start
     h1 
         font-size: 40rem
         margin: 0 0 10rem 0
         font-weight: 700
-        
         font-family: "Roboto"
         color: #2c2f3f
+        text-align: center
         +media(500)
             font-size: 64rem
+            
+        +media(1024)
+            font-size: 70rem
+            text-align: left
 
 .my-photo 
     justify-content: center
@@ -194,8 +201,11 @@ h2
         white-space: nowrap
         margin: 0 auto
         animation: typing 3.5s steps(40, end)
-        +media(500)
+        +media(550)
             font-size: 30rem
+           
+        +media(900)
+            font-size: 40rem
             letter-spacing: .15em
 
                     
@@ -207,7 +217,7 @@ h2
 
 
 /* section about */
-#about 
+.about 
     padding: 100rem 0
     background-color: #f5f8fa
 .title 
@@ -309,9 +319,11 @@ h2
     
 
 .title-chapter h3
-    padding-top: 35rem
+    padding-top: 40rem
+    padding-bottom: 45rem
 .progress-item
     p
+        padding-bottom: 40rem
         font-family: "Roboto"
         font-size: 18rem
         color: #000
@@ -398,7 +410,7 @@ canvas
     font-family: "Roboto"
     font-size: 15rem
     padding: 10rem 15rem
-    min-height: 80rem
+    min-height: 100rem
 
 
 /* section contact */
