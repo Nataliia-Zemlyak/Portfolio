@@ -42,7 +42,6 @@ html(lang="en")
                                         <path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"/>
                                         </g>
                                         </svg>
-
                                 li 
                                     a(href="https://github.com/Nataliia-Zemlyak").git
                                         <svg fill="#000000" width="800px" height="800px" viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg">
@@ -114,19 +113,16 @@ html(lang="en")
                                             dd Specialty "Economy". Sumy State University
                                         dt.specialty Master's degree
                                             dd Specialty "Accounting and taxation". Sumy State University                
-                            //- hr.style-hr
                     .about-skills        
                         .title-chapter
                             <h3>My skills
                         .my-skills.flex.progress
-                            //- .skills-adaptive.flex
                             .progress-item
                                 canvas#html-css.flex(width="1" height="1")
                                 p <i>HTML/CSS</i>
                             .progress-item
                                 canvas#pug-sass.flex(width="1" height="1")
                                 p <i>PUG/SASS/GULP</i>
-                             
                             .progress-item      
                                 canvas#js.flex(width="1" height="1")
                                 p <i>JavaScript</i>
@@ -140,29 +136,39 @@ html(lang="en")
             section.portfolio#recent-works
                 h2 Recent projects
                 .flex.wrapper.cards
-                    figure.project.card-left._anim-start
-                        figcaption
-                            picture
-                                <source srcset="img/Startup.webp" type="image/webp">
-                                img(src="img/Startup.jpg" alt="startup")
-                            
-                            h3 Startup
-                            p.tool Technologies:
-                            p.tools <i>Sass/Pug, Vanilla Js</i>
-                            p.description Responsive carousel with many settings, a small online store, various animations, parallax, zoom inside the image, popup.
-                            a.btn(href="https://nataliia-zemlyak.github.io/Startup/") View website
-                    figure.project.card-right._anim-start
+                    figure.project.card-anim._anim-start._anim-no
                         figcaption
                             picture
                                 <source srcset="img/Sea.webp" type="image/webp">
                                 img(src="img/Sea.jpg" alt="sea")
-                            
                             h3 Sea
                             p.tool Technologies:
                             p.tools <i>Sass/Pug, Bootstrap</i>
                             p.description Only responsive layout without JS, css animation, various hover effects, bootstrap.
                             a.btn(href="https://nataliia-zemlyak.github.io/Sea/") View website
-                     
+
+                    figure.project.card-anim._anim-start._anim-no
+                        figcaption
+                            picture
+                                <source srcset="img/Startup.webp" type="image/webp">
+                                img(src="img/Startup.jpg" alt="startup")
+                            h3 Startup
+                            p.tool Technologies:
+                            p.tools <i>Sass/Pug, Vanilla Js</i>
+                            p.description Responsive carousel with many settings, a small online store, various animations, parallax, zoom inside the image, popup.
+                            a.btn(href="https://nataliia-zemlyak.github.io/Startup/") View website
+                
+                    figure.project.card-anim._anim-start._anim-no
+                        figcaption
+                            picture
+                                <source srcset="img/bootstrap.webp" type="image/webp">
+                                img(src="img/bootstrap.jpg" alt="botstrap")
+                            h3 Bootstrap
+                            p.tool Technologies:
+                            p.tools <i>Bootstrap 5</i>
+                            p.description This page is completely written using Bootstrap classes
+                            a.btn(href="https://nataliia-zemlyak.github.io/Website-on-Bootstrap/") View website 
+
             section#contact
                 h2 Contact me
                 .container-form.wrapper
@@ -171,25 +177,18 @@ html(lang="en")
                             input.input(type="text" id="userName" name="name" placeholder="Your name")
                         label.label(for="mailUser")
                             input.input(type="mail" id="mailUser" name="email"  placeholder="Your email")
-                        
                         label.label(for="messageUser")
                             textarea.textarea(id="messageUser" name="message" placeholder="Your message")
-                        
                         .btn-section
                             button.btn(type="submit") Submit
                         
             section.coppy
                 .wrapper
-                    hr
+                    hr.style-hr
                     .footer
                         p.copyright © copyright 2023 N.Zemliak
-                         
+            
             .btn-scroll
                 button.scrolTop#scrolTop 
-                         
-                    
-                
-
-
-
+                        
         script(src="js/scripts.js")
