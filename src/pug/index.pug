@@ -161,16 +161,18 @@ html(lang="en")
 
             section#contact
                 h2 Contact me
+                p.placeInfo Будь ласка, заповніть усі поля
                 .container-form.wrapper
-                    form.flex(action="#" method="post")
+                    form#form.flex(method="post" name="myForm")
                         label.label(for="userName")
-                            input.input(type="text" id="userName" name="name" placeholder="Your name")
+                            input#name.input(type="text" name="name" placeholder="Your name")
                         label.label(for="mailUser")
-                            input.input(type="email" id="mailUser" name="email"  placeholder="Your email")
+                            input#email.input(type="email" name="email"  placeholder="Your email")
                         label.label(for="messageUser")
-                            textarea.textarea(id="messageUser" name="message" placeholder="Your message")
+                            textarea#message.textarea(name="message" placeholder="Your message")
                         .btn-section
-                            button.btn(type="submit") Submit
+                            input#sendMessage.btn(type="submit" value="Submit")
+                            
                         
             section.coppy
                 .wrapper
