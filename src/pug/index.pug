@@ -160,19 +160,20 @@ html(lang="en")
                             a.btn(href="https://nataliia-zemlyak.github.io/Website-on-Bootstrap/") View website 
 
             section#contact
-                h2 Contact me
-                p.placeInfo Будь ласка, заповніть усі поля
+                h2.contact-me Contact me
                 .container-form.wrapper
+                    p.sent-message 
                     form#form.flex(method="post" name="myForm")
+                        //- p.valid-email The email address you entered is not valid.
                         label.label(for="userName")
                             input#name.input(type="text" name="name" placeholder="Your name")
                         label.label(for="mailUser")
-                            input#email.input(type="email" name="email"  placeholder="Your email")
+                            input#email.input(type="mail" name="email"  placeholder="Your email")
                         label.label(for="messageUser")
                             textarea#message.textarea(name="message" placeholder="Your message")
                         .btn-section
                             input#sendMessage.btn(type="submit" value="Submit")
-                            
+                        
                         
             section.coppy
                 .wrapper

@@ -1,45 +1,46 @@
 //humburger
-let hamburger = document.querySelector(".hamburger")
-let menu = document.querySelector(".navmenu")
+let hamburger = document.querySelector(".hamburger");
+let menu = document.querySelector(".navmenu");
 
 hamburger.onclick = function () {
-    menu.classList.toggle("active-burger")
+    menu.classList.toggle("active-burger");
 }
 
-const headerSection = document.querySelector('.header-section')
-let lastScrollTop = 0
+const headerSection = document.querySelector('.header-section');
+let lastScrollTop = 0;
+
 function menuBackground() {
-    let scolTop = window.pageYOffset || document.documentElement.scrollTop
+    let scolTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scolTop > lastScrollTop) {
-        headerSection.classList.add("header-hidden")
-        
+        headerSection.classList.add("header-hidden");
+
     } else {
-        headerSection.classList.remove("header-hidden")
-        menu.classList.remove("active-burger")
+        headerSection.classList.remove("header-hidden");
+        menu.classList.remove("active-burger");
     }
-     
-    lastScrollTop = scolTop <= 0 ? 0 : scolTop
-    
+
+    lastScrollTop = scolTop <= 0 ? 0 : scolTop;
+
 
     if (window.pageYOffset > (window.innerHeight / 4)) {
-        headerSection.style.backgroundColor = "#2c2f3f"
-        
+        headerSection.style.backgroundColor = "#2c2f3f";
+
     } else {
-        headerSection.style.backgroundColor = "transparent"
+        headerSection.style.backgroundColor = "transparent";
     }
 }
-window.addEventListener(`scroll`, menuBackground)
+window.addEventListener(`scroll`, menuBackground);
 
 //scroll
-const a = document.querySelectorAll('a[href^="#"]')
+const a = document.querySelectorAll('a[href^="#"]');
 for (let title of a) {
     title.addEventListener('click', function (event) {
-        event.preventDefault()
-        let scroll = title.getAttribute('href')
+        event.preventDefault();
+        let scroll = title.getAttribute('href');
 
         document.querySelector(scroll).scrollIntoView({
             behavior: 'smooth'
-            
+
         })
     })
 }
@@ -66,58 +67,50 @@ document.getElementById('scrolTop').addEventListener('click', function () {
 //validate form
 
 
-function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
+function isValidEmail(mail) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(mail);
 }
 
-const form = document.querySelector('#form');
-const nameUser = document.querySelector('#name');
-const emailUser = document.querySelector('#email');
-const messageUser = document.querySelector('#message');
+let form = document.querySelector('#form'),
+    nameUser = document.querySelector('#name'),
+    emailUser = document.querySelector('#email'),
+    messageUser = document.querySelector('#message'),
+    sentMessage = document.querySelector(".sent-message");
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault(); // зупиняємо відправку форми
+    event.preventDefault();
+
     const name = nameUser.value;
     const email = emailUser.value;
     const message = messageUser.value;
 
     if (name === '' || email === '' || message === '') {
-        alert('Будь ласка, заповніть всі поля форми');
-    }
-        // // перевіряємо валідність емейлу
-        // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (validateEmail(emailUser.value)) {
-        alert('Будь ласка, введіть дійсну електронну адресу');
-        event.preventDefault(); // зупиняємо відправку форми
-    }
+        nameUser.classList.add("placeholderColor");
+        emailUser.classList.add("placeholderColor");
+        messageUser.classList.add("placeholderColor");
 
-    if(name || email || message) {
-        alert('good')
-}
+    } else if (!isValidEmail(email)) {
+        sentMessage.innerHTML = "The email address you entered is not valid.";
+    } else {
+        const xhr = new XMLHttpRequest(); 
+        xhr.onreadystatechange = function () { 
+          if (xhr.readyState === 4) { 
+            if (xhr.status === 200) { 
+              sentMessage.innerHTML = 'Your message has been sent';
+            } else { 
+              sentMessage.innerHTML = 'Sorry, there was an error, your message was not sent';
+             
+            } 
+          } 
+        }; 
+        xhr.open('POST', 'index.php', true); 
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
+        let formData = `name=${nameUser.value}&email=${emailUser.value}&message=${messageUser.value}`; 
+        xhr.send(formData); 
+    }
 });
 
-
-
-
-// let sendMessage = document.querySelector("#sendMessage"),
-//     placeInfo = document.querySelector(".placeInfo")
-    
-// sendMessage.addEventListener("click", (e) => {
-//     e.preventDefault()
-//     validateForm()
-// } ) 
-       
-// function validateForm() {
-//     let inputs = document.forms["myForm"].getElementsByTagName("input");
-//     for (let i = 0; i < inputs.length; i++) {
-//         if (inputs[i].value == "") {
-//             placeInfo.classList.add("placeInfoOpacity")
-//             return false;
-//         } 
-//     }
-//     // sendForm();
-// }
 
 //send form
 // function sendForm () {
@@ -125,17 +118,20 @@ form.addEventListener('submit', (event) => {
 //     const nameInput = document.querySelector('#name'); 
 //     const emailInput = document.querySelector('#email'); 
 //     const messageInput = document.querySelector('#message'); 
-     
+
 //     form.addEventListener('submit', function (event) { 
 //       event.preventDefault(); // Зупиняємо стандартну поведінку форми 
-     
+
 //       const xhr = new XMLHttpRequest(); 
 //       xhr.onreadystatechange = function () { 
 //         if (xhr.readyState === 4) { 
 //           if (xhr.status === 200) { 
-//             alert('Повідомлення надіслано. Дякуємо!'); 
+//             // alert('Повідомлення надіслано. Дякуємо!'); 
+//             sentMessage.innerHTML = 'Your message has been sent';
+
 //           } else { 
-//             alert('Виникла помилка під час відправки повідомлення.'); 
+//             sentMessage.innerHTML = 'Your message has not been sent';
+//             // alert('Виникла помилка під час відправки повідомлення.'); 
 //           } 
 //         } 
 //       }; 
@@ -145,4 +141,3 @@ form.addEventListener('submit', (event) => {
 //       xhr.send(formData); 
 //     });
 // }
-

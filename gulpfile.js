@@ -76,6 +76,17 @@ export const js = () => {
     }))
 }
 
+export const php = () => { 
+    return gulp 
+    .src ([ 
+        "src/php/*.*" 
+    ], {dot: true}) 
+    .pipe(gulp.dest("docs/php")) 
+    .pipe(browserSync.reload({ 
+        stream: true 
+    })) 
+}
+
 export const files = () => {
     return gulp
     .src([
@@ -125,6 +136,8 @@ export const watch = () => {
     gulp.watch("src/*.*", gulp.parallel(files))
     gulp.watch("src/fonts/**/*.*", gulp.parallel(fonts))
     gulp.watch("src/img/**/*.*", gulp.parallel(images))
+    gulp.watch("src/php/**/*.*", gulp.parallel(php))
+
 }
 
 export default gulp.series(
@@ -134,6 +147,7 @@ export default gulp.series(
         html,
         css,
         js,
+        php,
         files,
         fonts,
         images,

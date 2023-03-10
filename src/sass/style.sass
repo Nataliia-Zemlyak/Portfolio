@@ -12,7 +12,7 @@ html
 body 
     font-family: 'Ubuntu', Roboto Slab, sans-serif
     margin: 0
-    cursor: url(cursor.cur), pointer
+    
 body.lock
     overflow: hidden
 
@@ -407,10 +407,6 @@ canvas
         color: #2c2f3f
         border: dashed #85586F
 
-
-
-        
-
 .project 
     p  
         margin: 0
@@ -457,6 +453,8 @@ canvas
 #contact 
     padding: 100rem 0
     background-color: #f5f8fa
+.contact-me
+    padding-bottom: 30rem
 form 
     flex-direction: column
 
@@ -475,7 +473,7 @@ form
     width: 100%
     margin-bottom: 50rem
     padding: 10.5rem 17rem
-    font-size: 18rem
+    font-size: 15rem
     line-height: 20rem
     outline: 0
     color: #000
@@ -487,16 +485,19 @@ form
 .btn-section 
     display: flex
     justify-content: center
+    
 
-.placeInfo
+.placeholderColor
+    &::placeholder
+        color: #f33939
+
+.sent-message 
     font-size: 15rem
-    font-family: "Roboto"
-    color: #f33939
+    font-family: "Roboto Slab" 
+    color: #85586F
     text-align: center
-    opacity: 0
-
-.placeInfoOpacity
-    opacity: 1
+    padding-bottom: 20rem
+    transition: all .3s ease 
 
 
 /* section footer */
